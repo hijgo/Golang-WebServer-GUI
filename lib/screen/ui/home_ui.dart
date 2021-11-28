@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:gui/Resources/StreamMap/home_stream_map.dart';
 import 'package:gui/screen/bloC/home_bloc.dart';
 import 'package:gui/screen/event/home_event.dart';
 
 class Home extends StatefulWidget {
-  const Home(this.title,{ Key? key }) : super(key: key);
-  final String title;
+  const Home({Key? key}) : super(key: key);
   @override
   _HomeState createState() => _HomeState();
 }
@@ -13,7 +14,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final HomeBloC _homeBloC = HomeBloC();
   final _defaultUrl = "http://127.0.0.1:4545";
-  
+
   @override
   void initState() {
     super.initState();
@@ -22,12 +23,36 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 5,
-        title: Text(widget.title),
-      ),
-      body: Container(),
-    );
+    return StreamBuilder(
+        stream: _homeBloC.streamMap,
+        initialData: HomeStreamMap(false),
+        builder: (BuildContext context, AsyncSnapshot<HomeStreamMap> snapshot) {
+          return DefaultTabController(
+                  length: 4,
+                  child: Scaffold(
+                    appBar: AppBar(
+                      toolbarHeight: 30,
+                      elevation: 15,
+                      title: const TabBar(
+                        tabs: [
+                          Expanded(child: SizedBox(height: 30,child: Icon(Icons.dns),)),
+                          Expanded(child: SizedBox(height: 30,child: Icon(Icons.insights),)),
+                          Expanded(child: SizedBox(height: 30,child: Icon(Icons.published_with_changes),)),
+                          Expanded(child: SizedBox(height: 30,child: Icon(Icons.launch),)),
+                        ],
+                      ),
+                    ),
+                    body: const TabBarView(
+                      children: [
+                        Icon(Icons.dns),
+                        Icon(Icons.insights),
+                        Icon(Icons.published_with_changes),
+                        Icon(Icons.launch),
+                      ],
+                    ),
+                  ),
+                );
+        }
+      );
   }
 }
