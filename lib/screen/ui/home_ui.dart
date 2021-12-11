@@ -13,12 +13,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final HomeBloC _homeBloC = HomeBloC();
-  final _defaultUrl = "http://127.0.0.1:4545";
 
   @override
   void initState() {
     super.initState();
-    _homeBloC.shopEventSink.add(CheckAvaiability(_defaultUrl));
+    _homeBloC.shopEventSink.add(CheckAvaiability());
   }
 
   @override
@@ -35,10 +34,10 @@ class _HomeState extends State<Home> {
                       elevation: 15,
                       title: const TabBar(
                         tabs: [
-                          Expanded(child: SizedBox(height: 30,child: Icon(Icons.dns),)),
-                          Expanded(child: SizedBox(height: 30,child: Icon(Icons.insights),)),
-                          Expanded(child: SizedBox(height: 30,child: Icon(Icons.published_with_changes),)),
-                          Expanded(child: SizedBox(height: 30,child: Icon(Icons.launch),)),
+                          Center(child: SizedBox(height: 30,child: Icon(Icons.dns),)),
+                          Center(child: SizedBox(height: 30,child: Icon(Icons.insights),)),
+                          Center(child: SizedBox(height: 30,child: Icon(Icons.published_with_changes),)),
+                          Center(child: SizedBox(height: 30,child: Icon(Icons.launch),)),
                         ],
                       ),
                     ),

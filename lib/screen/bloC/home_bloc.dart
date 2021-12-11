@@ -4,6 +4,8 @@ import 'package:gui/screen/event/home_event.dart';
 
 class HomeBloC{
   bool _isAvailable = false;
+  final String _serverUrl = "http://127.0.0.1:4545";
+
 
   final _homeStateController = StreamController<HomeStreamMap>();
   StreamSink<HomeStreamMap> get _inStreamMap => _homeStateController.sink;
@@ -22,7 +24,7 @@ class HomeBloC{
 
   void _mapEventToState(HomeEvent event)async {
     if(event is CheckAvaiability){
-      _isAvailable = isServerAvaiable("");
+      _isAvailable = isServerAvaiable(_serverUrl);
     }
     _inStreamMap.add(HomeStreamMap(_isAvailable));
   }
