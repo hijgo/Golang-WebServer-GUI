@@ -5,5 +5,13 @@
     "cred": "Schlüssel",
     "serverN/A": "Server nicht erreichbar",
     "falseCred": "Falscher Schlüssel",
-    "enter": "Eingabe"
+    "enter": "Eingabe",
+    "updateWA": "Aktualisiere WebApp",
+    "destination": "Endpoint",
+    "fileName": "Dateiname",
+    "fileSize": "Dateigröße",
+    "destOrDataNull": "Bitte wählen Sie eine Update-Datei und geben Sie einen Enpoint an.",
+    "destNotValid": "Für das Feld 'Endpoint' ist der Wert nicht erlaubt.",
+    "reqUpdate": "Aktualisieren",
+    "incorrectEndpoint": "Fehlgeschlagen. Ungültiger Endpoint"
 }

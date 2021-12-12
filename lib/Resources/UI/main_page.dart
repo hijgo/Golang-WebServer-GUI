@@ -90,11 +90,11 @@ class _MainPageState extends State<MainPage> {
                                       children: [!widget.showProgressIndicator?Padding(
                                         padding: const EdgeInsets.all(10),
                                         child: I18NText(
-                                                i18nKey:widget.title,
+                                                i18nKey: widget.title,
                                                 style: TextStyle(
                                                   fontSize: 23,
                                                   fontWeight: FontWeight.bold,
-                                                  color: Prop().customTheme.data.colorScheme.secondary,
+                                                  color: Prop().customTheme.data.colorScheme.primary,
                                                 ),
                                               ),
                                       ):Container(),Expanded(
@@ -116,7 +116,7 @@ class _MainPageState extends State<MainPage> {
                               ),
                               Divider(
                                 thickness: 1,
-                                color: Prop().customTheme.data.colorScheme.secondary,
+                                color: Prop().customTheme.data.colorScheme.primary,
                               ),
                               Align(
                                 alignment: Alignment.centerLeft,

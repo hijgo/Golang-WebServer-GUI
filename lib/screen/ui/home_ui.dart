@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gui/Resources/StreamMap/home_stream_map.dart';
 import 'package:gui/screen/bloC/home_bloc.dart';
 import 'package:gui/screen/event/home_event.dart';
+import 'package:gui/screen/ui/update_ui.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -45,7 +46,7 @@ class _HomeState extends State<Home> {
                       children: [
                         Icon(Icons.dns),
                         Icon(Icons.insights),
-                        Icon(Icons.published_with_changes),
+                        Update(),
                         Icon(Icons.launch),
                       ],
                     ),

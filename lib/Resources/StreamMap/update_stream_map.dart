@@ -1,5 +1,8 @@
+import 'package:flutter/material.dart';
+
 class UpdateStreamMap {
-  int? statusCode;
-  String? msg;
-  UpdateStreamMap(this.statusCode,this.msg);
+  int? statusCode,fSize;
+  String? msg,fName,error;
+  TextEditingController destController;
+  UpdateStreamMap(this.statusCode,this.msg,this.fName,this.fSize,this.destController,this.error);
 }

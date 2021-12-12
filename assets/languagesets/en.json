@@ -5,5 +5,13 @@
    "cred": "Key",
    "serverN/A": "The server is not available",
    "falseCred": "Wrong key",
-   "enter": "Enter"
+   "enter": "Enter",
+   "updateWA": "Update Existing WebApp",
+   "destination": "Endpoint",
+   "fileName": "File-Name",
+   "fileSize": "File-Size",
+   "destOrDataNull": "Please choose an update-file and specify an endpoint.",
+   "destNotValid": "The vaule for field 'Endpoint' is not valid.",
+   "reqUpdate": "Request Update",
+   "incorrectEndpoint": "Failed. Invalid endpoint"
 }
